@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <EnableNuget>true</EnableNuget>
@@ -7,18 +6,442 @@
     <RootNamespace>Azure.Bicep.Types.Az</RootNamespace>
     <Description>Bicep types generated from public Azure OpenAPI specs</Description>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Azure.Bicep.Types" Version="0.5.194" />
   </ItemGroup>
-
   <ItemGroup>
-    <TypeFiles Include="../../generated/**/*.json">
-      <CompressedFile>$(IntermediateOutputPath)/generated/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
-      <LogicalName>$([System.String]::new('%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    <!-- Core example (existing) -->
+    <TypeFiles Include="../../generated/compute_0/microsoft.compute/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/compute_0/microsoft.compute/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('compute_0/microsoft.compute/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Generated provider mappings (only folders that currently exist in generated/). Some requested providers map to differently named folders (documented in comments). -->
+    <TypeFiles Include="../../generated/alertsmanagement/microsoft.alertsmanagement/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/alertsmanagement/microsoft.alertsmanagement/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('alertsmanagement/microsoft.alertsmanagement/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/analysisservices/microsoft.analysisservices/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/analysisservices/microsoft.analysisservices/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('analysisservices/microsoft.analysisservices/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/apicenter/microsoft.apicenter/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/apicenter/microsoft.apicenter/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('apicenter/microsoft.apicenter/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/apimanagement/microsoft.apimanagement/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/apimanagement/microsoft.apimanagement/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('apimanagement/microsoft.apimanagement/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/app/microsoft.app/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/app/microsoft.app/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('app/microsoft.app/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Microsoft.AppService maps to Microsoft.Web (web/) -->
+    <TypeFiles Include="../../generated/web/microsoft.web/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/web/microsoft.web/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('web/microsoft.web/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/appconfiguration/microsoft.appconfiguration/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/appconfiguration/microsoft.appconfiguration/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('appconfiguration/microsoft.appconfiguration/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/appplatform/microsoft.appplatform/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/appplatform/microsoft.appplatform/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('appplatform/microsoft.appplatform/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/automation/microsoft.automation/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/automation/microsoft.automation/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('automation/microsoft.automation/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Microsoft.AAD + Microsoft.AzureActiveDirectory map to azureactivedirectory/ -->
+    <TypeFiles Include="../../generated/azureactivedirectory/microsoft.azureactivedirectory/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/azureactivedirectory/microsoft.azureactivedirectory/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('azureactivedirectory/microsoft.azureactivedirectory/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/azurearcdata/microsoft.azurearcdata/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/azurearcdata/microsoft.azurearcdata/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('azurearcdata/microsoft.azurearcdata/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/azuredatatransfer/microsoft.azuredatatransfer/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/azuredatatransfer/microsoft.azuredatatransfer/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('azuredatatransfer/microsoft.azuredatatransfer/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/azurestackhci_1/microsoft.azurestackhci/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/azurestackhci_1/microsoft.azurestackhci/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('azurestackhci_1/microsoft.azurestackhci/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/batch/microsoft.batch/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/batch/microsoft.batch/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('batch/microsoft.batch/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/botservice/microsoft.botservice/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/botservice/microsoft.botservice/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('botservice/microsoft.botservice/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Microsoft.Cache maps to redis/ -->
+    <TypeFiles Include="../../generated/redis/microsoft.cache/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/redis/microsoft.cache/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('redis/microsoft.cache/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/cdn/microsoft.cdn/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/cdn/microsoft.cdn/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('cdn/microsoft.cdn/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/chaos/microsoft.chaos/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/chaos/microsoft.chaos/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('chaos/microsoft.chaos/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/cognitiveservices/microsoft.cognitiveservices/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/cognitiveservices/microsoft.cognitiveservices/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('cognitiveservices/microsoft.cognitiveservices/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/communication/microsoft.communication/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/communication/microsoft.communication/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('communication/microsoft.communication/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/confluent/microsoft.confluent/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/confluent/microsoft.confluent/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('confluent/microsoft.confluent/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/consumption/microsoft.consumption/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/consumption/microsoft.consumption/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('consumption/microsoft.consumption/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/containerinstance/microsoft.containerinstance/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/containerinstance/microsoft.containerinstance/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('containerinstance/microsoft.containerinstance/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/containerregistry/microsoft.containerregistry/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/containerregistry/microsoft.containerregistry/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('containerregistry/microsoft.containerregistry/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/containerservice_0/microsoft.containerservice/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/containerservice_0/microsoft.containerservice/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('containerservice_0/microsoft.containerservice/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/containerstorage/microsoft.containerstorage/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/containerstorage/microsoft.containerstorage/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('containerstorage/microsoft.containerstorage/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/cost-management/microsoft.costmanagement/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/cost-management/microsoft.costmanagement/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('cost-management/microsoft.costmanagement/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/datafactory/microsoft.datafactory/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/datafactory/microsoft.datafactory/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('datafactory/microsoft.datafactory/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/dataprotection/microsoft.dataprotection/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/dataprotection/microsoft.dataprotection/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('dataprotection/microsoft.dataprotection/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/datashare/microsoft.datashare/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/datashare/microsoft.datashare/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('datashare/microsoft.datashare/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/databricks/microsoft.databricks/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/databricks/microsoft.databricks/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('databricks/microsoft.databricks/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/datadog/microsoft.datadog/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/datadog/microsoft.datadog/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('datadog/microsoft.datadog/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/dashboard/microsoft.dashboard/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/dashboard/microsoft.dashboard/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('dashboard/microsoft.dashboard/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/desktopvirtualization/microsoft.desktopvirtualization/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/desktopvirtualization/microsoft.desktopvirtualization/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('desktopvirtualization/microsoft.desktopvirtualization/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/devcenter/microsoft.devcenter/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/devcenter/microsoft.devcenter/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('devcenter/microsoft.devcenter/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/devopsinfrastructure/microsoft.devopsinfrastructure/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/devopsinfrastructure/microsoft.devopsinfrastructure/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('devopsinfrastructure/microsoft.devopsinfrastructure/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/devtestlabs/microsoft.devtestlab/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/devtestlabs/microsoft.devtestlab/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('devtestlabs/microsoft.devtestlab/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Microsoft.DocumentDB maps to cosmos-db/ -->
+    <TypeFiles Include="../../generated/cosmos-db/microsoft.documentdb/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/cosmos-db/microsoft.documentdb/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('cosmos-db/microsoft.documentdb/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/edge_0/microsoft.edge/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/edge_0/microsoft.edge/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('edge_0/microsoft.edge/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/edgeorder/microsoft.edgeorder/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/edgeorder/microsoft.edgeorder/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('edgeorder/microsoft.edgeorder/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/elastic/microsoft.elastic/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/elastic/microsoft.elastic/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('elastic/microsoft.elastic/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/eventgrid/microsoft.eventgrid/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/eventgrid/microsoft.eventgrid/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('eventgrid/microsoft.eventgrid/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/eventhub/microsoft.eventhub/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/eventhub/microsoft.eventhub/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('eventhub/microsoft.eventhub/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/extendedlocation/microsoft.extendedlocation/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/extendedlocation/microsoft.extendedlocation/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('extendedlocation/microsoft.extendedlocation/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/fabric/microsoft.fabric/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/fabric/microsoft.fabric/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('fabric/microsoft.fabric/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/frontdoor_0/microsoft.frontdoor/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/frontdoor_0/microsoft.frontdoor/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('frontdoor_0/microsoft.frontdoor/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/graphservicesprod/microsoft.graphservices/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/graphservicesprod/microsoft.graphservices/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('graphservicesprod/microsoft.graphservices/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/hdinsight_0/microsoft.hdinsight/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/hdinsight_0/microsoft.hdinsight/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('hdinsight_0/microsoft.hdinsight/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/healthcareapis/microsoft.healthcareapis/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/healthcareapis/microsoft.healthcareapis/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('healthcareapis/microsoft.healthcareapis/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/hybridcompute/microsoft.hybridcompute/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/hybridcompute/microsoft.hybridcompute/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('hybridcompute/microsoft.hybridcompute/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Microsoft.Kubernetes maps to hybridkubernetes/ -->
+    <TypeFiles Include="../../generated/hybridkubernetes/microsoft.kubernetes/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/hybridkubernetes/microsoft.kubernetes/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('hybridkubernetes/microsoft.kubernetes/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/iotoperations/microsoft.iotoperations/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/iotoperations/microsoft.iotoperations/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('iotoperations/microsoft.iotoperations/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Microsoft.Insights (subset) maps to applicationinsights/ -->
+    <TypeFiles Include="../../generated/applicationinsights/microsoft.insights/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/applicationinsights/microsoft.insights/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('applicationinsights/microsoft.insights/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/keyvault/microsoft.keyvault/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/keyvault/microsoft.keyvault/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('keyvault/microsoft.keyvault/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/kubernetesconfiguration_0/microsoft.kubernetesconfiguration/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/kubernetesconfiguration_0/microsoft.kubernetesconfiguration/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('kubernetesconfiguration_0/microsoft.kubernetesconfiguration/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/azure-kusto/microsoft.kusto/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/azure-kusto/microsoft.kusto/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('azure-kusto/microsoft.kusto/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/loadtestservice_0/microsoft.loadtestservice/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/loadtestservice_0/microsoft.loadtestservice/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('loadtestservice_0/microsoft.loadtestservice/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/logic/microsoft.logic/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/logic/microsoft.logic/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('logic/microsoft.logic/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/machinelearningservices/microsoft.machinelearningservices/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/machinelearningservices/microsoft.machinelearningservices/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('machinelearningservices/microsoft.machinelearningservices/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/maintenance/microsoft.maintenance/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/maintenance/microsoft.maintenance/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('maintenance/microsoft.maintenance/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/maps/microsoft.maps/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/maps/microsoft.maps/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('maps/microsoft.maps/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Microsoft.ManagedIdentity maps to msi/ -->
+    <TypeFiles Include="../../generated/msi/microsoft.managedidentity/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/msi/microsoft.managedidentity/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('msi/microsoft.managedidentity/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/managedservices/microsoft.managedservices/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/managedservices/microsoft.managedservices/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('managedservices/microsoft.managedservices/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/marketplace/microsoft.marketplace/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/marketplace/microsoft.marketplace/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('marketplace/microsoft.marketplace/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/media/microsoft.media/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/media/microsoft.media/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('media/microsoft.media/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/mobilenetwork/microsoft.mobilenetwork/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/mobilenetwork/microsoft.mobilenetwork/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('mobilenetwork/microsoft.mobilenetwork/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/monitor_0/microsoft.monitor/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/monitor_0/microsoft.monitor/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('monitor_0/microsoft.monitor/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/netapp/microsoft.netapp/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/netapp/microsoft.netapp/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('netapp/microsoft.netapp/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/network/microsoft.network/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/network/microsoft.network/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('network/microsoft.network/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/notificationhubs/microsoft.notificationhubs/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/notificationhubs/microsoft.notificationhubs/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('notificationhubs/microsoft.notificationhubs/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/operationalinsights/microsoft.operationalinsights/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/operationalinsights/microsoft.operationalinsights/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('operationalinsights/microsoft.operationalinsights/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/operationsmanagement/microsoft.operationsmanagement/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/operationsmanagement/microsoft.operationsmanagement/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('operationsmanagement/microsoft.operationsmanagement/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/policyinsights/microsoft.policyinsights/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/policyinsights/microsoft.policyinsights/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('policyinsights/microsoft.policyinsights/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/portal/microsoft.portal/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/portal/microsoft.portal/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('portal/microsoft.portal/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/powerplatform/microsoft.powerplatform/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/powerplatform/microsoft.powerplatform/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('powerplatform/microsoft.powerplatform/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/providerhub/microsoft.providerhub/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/providerhub/microsoft.providerhub/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('providerhub/microsoft.providerhub/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/purview/microsoft.purview/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/purview/microsoft.purview/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('purview/microsoft.purview/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/quantum/microsoft.quantum/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/quantum/microsoft.quantum/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('quantum/microsoft.quantum/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/recoveryservices/microsoft.recoveryservices/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/recoveryservices/microsoft.recoveryservices/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('recoveryservices/microsoft.recoveryservices/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/redhatopenshift/microsoft.redhatopenshift/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/redhatopenshift/microsoft.redhatopenshift/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('redhatopenshift/microsoft.redhatopenshift/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/relay/microsoft.relay/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/relay/microsoft.relay/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('relay/microsoft.relay/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/resourcegraph/microsoft.resourcegraph/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/resourcegraph/microsoft.resourcegraph/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('resourcegraph/microsoft.resourcegraph/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/resources_0/microsoft.resources/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/resources_0/microsoft.resources/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('resources_0/microsoft.resources/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/scheduler/microsoft.scheduler/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/scheduler/microsoft.scheduler/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('scheduler/microsoft.scheduler/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/search/microsoft.search/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/search/microsoft.search/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('search/microsoft.search/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/security/microsoft.security/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/security/microsoft.security/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('security/microsoft.security/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/securityinsights/microsoft.securityinsights/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/securityinsights/microsoft.securityinsights/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('securityinsights/microsoft.securityinsights/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/servicebus/microsoft.servicebus/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/servicebus/microsoft.servicebus/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('servicebus/microsoft.servicebus/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/servicefabric/microsoft.servicefabric/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/servicefabric/microsoft.servicefabric/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('servicefabric/microsoft.servicefabric/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/servicelinker/microsoft.servicelinker/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/servicelinker/microsoft.servicelinker/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('servicelinker/microsoft.servicelinker/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/servicenetworking/microsoft.servicenetworking/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/servicenetworking/microsoft.servicenetworking/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('servicenetworking/microsoft.servicenetworking/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Microsoft.SignalRService maps to signalr/ -->
+    <TypeFiles Include="../../generated/signalr/microsoft.signalrservice/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/signalr/microsoft.signalrservice/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('signalr/microsoft.signalrservice/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/solutions/microsoft.solutions/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/solutions/microsoft.solutions/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('solutions/microsoft.solutions/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/sql/microsoft.sql/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/sql/microsoft.sql/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('sql/microsoft.sql/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/sqlvirtualmachine/microsoft.sqlvirtualmachine/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/sqlvirtualmachine/microsoft.sqlvirtualmachine/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('sqlvirtualmachine/microsoft.sqlvirtualmachine/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/storage/microsoft.storage/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/storage/microsoft.storage/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('storage/microsoft.storage/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/storagecache/microsoft.storagecache/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/storagecache/microsoft.storagecache/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('storagecache/microsoft.storagecache/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/streamanalytics/microsoft.streamanalytics/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/streamanalytics/microsoft.streamanalytics/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('streamanalytics/microsoft.streamanalytics/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/subscription/microsoft.subscription/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/subscription/microsoft.subscription/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('subscription/microsoft.subscription/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/synapse/microsoft.synapse/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/synapse/microsoft.synapse/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('synapse/microsoft.synapse/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/workloads_0/microsoft.workloads/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/workloads_0/microsoft.workloads/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('workloads_0/microsoft.workloads/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <!-- Neon.Postgres maps to liftrneon/ -->
+    <TypeFiles Include="../../generated/liftrneon/neon.postgres/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/liftrneon/neon.postgres/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('liftrneon/neon.postgres/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/paloaltonetworks/paloaltonetworks.cloudngfw/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/paloaltonetworks/paloaltonetworks.cloudngfw/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('paloaltonetworks/paloaltonetworks.cloudngfw/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
+    <TypeFiles Include="../../generated/index.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/index.json.deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('index.json.deflated').Replace('\', '/'))</LogicalName>
     </TypeFiles>
   </ItemGroup>
-
   <UsingTask TaskName="CompressType" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
       <SourceFile ParameterType="System.String" Required="true" />
@@ -30,7 +453,6 @@
       <Code Type="Fragment" Language="cs">
         <![CDATA[
           Directory.CreateDirectory(Path.GetDirectoryName(TargetFile));
-
           using (var inputStream = File.OpenRead(SourceFile))
           using (var outputStream = File.Create(TargetFile))
           using (var compressionStream = new DeflateStream(outputStream, CompressionLevel.Optimal))
@@ -41,17 +463,14 @@
       </Code>
     </Task>
   </UsingTask>
-
   <Target Name="CompressTypes" Inputs="@(TypeFiles)" Outputs="%(TypeFiles.CompressedFile)">
     <CompressType SourceFile="%(TypeFiles.FullPath)" TargetFile="%(TypeFiles.CompressedFile)" />
   </Target>
-
   <Target Name="EmbedTypes" BeforeTargets="BeforeBuild" DependsOnTargets="CompressTypes">
     <ItemGroup>
       <EmbeddedResource Include="%(TypeFiles.CompressedFile)" LogicalName="%(LogicalName)" />
     </ItemGroup>
   </Target>
-
   <!-- Need to sign the assembly with a strong name in Official Build. -->
   <Import Project="$(EnlistmentRoot)\StrongName.props" />
 </Project>
