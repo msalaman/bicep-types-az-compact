@@ -201,7 +201,7 @@
           "System.Text.Encodings.Web": "9.0.4"
         }
       },
-      "Azure.Bicep.Types.Az": {
+      "Microsoft.Azure.Mcp.AzTypes.Internal.Compact": {
         "type": "Project",
         "dependencies": {
           "Azure.Bicep.Types": "[0.5.194, )"

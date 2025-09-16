@@ -3,6 +3,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentAssertions;
 using System.Linq;
+using Microsoft.Azure.Mcp.AzTypes.Internal.Compact;
 
 namespace Azure.Bicep.Types.Az.UnitTests
 {

@@ -3,8 +3,9 @@
 using System;
 using System.IO;
 using System.IO.Compression;
+using Azure.Bicep.Types;
 
-namespace Azure.Bicep.Types.Az;
+namespace Microsoft.Azure.Mcp.AzTypes.Internal.Compact;
 
     public class AzTypeLoader : TypeLoader
     {
