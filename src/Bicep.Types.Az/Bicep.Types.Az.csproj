@@ -44,6 +44,10 @@
       <CompressedFile>$(IntermediateOutputPath)/generated/appplatform/microsoft.appplatform/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
       <LogicalName>$([System.String]::new('appplatform/microsoft.appplatform/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
     </TypeFiles>
+    <TypeFiles Include="../../generated/authorization/microsoft.authorization/**/*.json">
+      <CompressedFile>$(IntermediateOutputPath)/generated/authorization/microsoft.authorization/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
+      <LogicalName>$([System.String]::new('authorization/microsoft.authorization/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
+    </TypeFiles>
     <TypeFiles Include="../../generated/automation/microsoft.automation/**/*.json">
       <CompressedFile>$(IntermediateOutputPath)/generated/automation/microsoft.automation/%(RecursiveDir)%(Filename)%(Extension).deflated</CompressedFile>
       <LogicalName>$([System.String]::new('automation/microsoft.automation/%(RecursiveDir)%(Filename)%(Extension).deflated').Replace('\', '/').ToLowerInvariant())</LogicalName>
